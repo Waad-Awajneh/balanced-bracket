@@ -3,8 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  gap: 1px;
 }
-
+/* 
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +41,28 @@
 
 .read-the-docs {
   color: #888;
+} */
+.box {
+  width: 100px;
+  height: 100px;
+  color: white;
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  /* border: white solid 4px; */
+}
+.box:hover::after {
+  content: "+";
+  height: 100%;
+  background-color: blue;
+  color: black;
+  /* font-weight: bold; */
+}
+
+input {
+  width: 100px;
+  height: 95px;
+  color: white;
+  background-color: black;
 }

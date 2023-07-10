@@ -1,27 +1,20 @@
 import { useState } from "react";
 
 import "./App.css";
+import Box from "./box";
 
 function App() {
-  const isValid = (string) => {
-    let stack = [];
-    for (let i = 0; i < string.length; i++) {
-      if ("{([".includes(string[i])) stack.push(string[i]);
-      if (")}]".includes(string[i])) {
-        let x = stack.pop();
-        if (!"{([".includes(x)) return false;
-      }
-    }
-    return stack.length != 0 ? false : true;
-  };
-  console.log(isValid("()")); //true
-  console.log(isValid("((()))")); //true
-  console.log(isValid("({[]})")); //true
-  console.log(isValid("({}[])")); //true
-  console.log(isValid("({}[]])")); //false
-  console.log(isValid("((())")); //false
+  let [boxes, setBoxes] = useState(["a", "b", "c", "d"]);
 
-  return <></>;
+  return (
+    <>
+      {boxes.map((e, i) => (
+        <>
+          <Box ele={e} i={i} key={i} setBoxes={setBoxes} />
+        </>
+      ))}
+    </>
+  );
 }
 
 export default App;
